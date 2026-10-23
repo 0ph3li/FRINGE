@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" translate="no" class="notranslate">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="google" content="notranslate" />
+  <title>Rituals — FRINGE</title>
+  <meta name="description" content="Four rituals for hair with a reputation: scalp, deep treatment, lengths, brushing. Step by step, with a timer, with the products." />
+  <meta name="theme-color" content="#f7f8fa" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <!-- concept, design & code by ghostly.grl ♥ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=DM+Mono:wght@400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=20261023-13" />
+  <link rel="stylesheet" href="css/home.css?v=20261023-13" />
+  <link rel="stylesheet" href="css/rituals.css?v=20261023-13" />
+</head>
+<body class="is-loading" data-page="rituals">
+
+  <!-- ================= LOADER ================= -->
+  <div class="loader loader--quick" id="loader" aria-hidden="true">
+    <p class="ld-top caps">FRINGE — rituals</p>
+    <p class="ld-word" id="ldWord" aria-hidden="true">RITUALS</p>
+    <p class="ld-bot mono"><span id="ldMsg">washing</span></p>
+    <p class="ld-num" id="ldNum">00</p>
+  </div>
+
+  <!-- global fx -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><i class="cursor__dot"></i><span class="cursor__label" id="cursorLabel"></span></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="progress" aria-hidden="true"><i id="progress"></i></div>
+
+  <!-- ================= HEADER ================= -->
+  <header class="hdr" id="hdr">
+    <nav class="nav" aria-label="Main">
+      <a href="shop.html">boutique</a>
+      <a href="quiz.html">hair quiz</a>
+      <a href="rituals.html" class="is-here" aria-current="page">rituals</a>
+      <a href="salon.html">salon</a>
+    </nav>
+    <a href="index.html" class="logo" aria-label="FRINGE home">FRINGE<small>HAIR CARE</small></a>
+    <div class="hdr__r">
+      <a href="index.html#method">the method</a>
+      <button class="bag" id="bag" type="button" data-cursor="your bag">bag · <b id="bagN">0</b></button>
+    </div>
+  </header>
+
+  <!-- the four acts, always at hand -->
+  <nav class="acts-rail" id="rail" aria-label="the rituals"></nav>
+
+  <main id="top">
+
+    <!-- ========== 1 · THE WORD ========== -->
+    <section class="rt-hero" id="rtHero">
+      <p class="rt-hero__k mono"><span>04 — the rituals</span><span>four acts · 2 to 20 minutes</span></p>
+      <div class="rt-hero__word" data-cursor="come closer"><h1 class="big-word rt-word" id="rtWord" aria-label="rituals">rituals</h1></div>
+      <div class="rt-hero__row">
+        <p class="rt-hero__lead">Every head of hair goes through the same four scenes. Here is how we do each one, step by step, with a timer if you want it. <em class="script">Phone face down.</em></p>
+        <ol class="rt-index" id="rtIndex"></ol>
+      </div>
+    </section>
+
+    <!-- ========== 2 · THE FOUR ACTS (built from js/rituals.js) ========== -->
+    <div id="chapters"></div>
+
+    <!-- ========== 3 · THE WEEK ========== -->
+    <section class="week" id="week">
+      <header class="week__head">
+        <p class="mono k">the week</p>
+        <h2 class="t-big" data-split>plan your <em class="script">week</em></h2>
+        <p class="week__sub">Tap a day to give it a ritual. Tap again to change it. We'll remember.</p>
+      </header>
+      <div class="week__grid" id="weekGrid"></div>
+      <p class="week__sum mono" id="weekSum"></p>
+    </section>
+
+    <!-- ========== THE TIMER: one ritual, step by step ========== -->
+    <div class="timer" id="timer" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="tmStep">
+      <div class="timer__top">
+        <p class="mono" id="tmAct"></p>
+        <button type="button" class="timer__x" id="tmClose" aria-label="close">close ✕</button>
+      </div>
+      <div class="timer__body">
+        <div class="timer__ring">
+          <svg viewBox="0 0 200 200" aria-hidden="true">
+            <circle class="ring__bg" cx="100" cy="100" r="92" />
+            <circle class="ring__fg" id="tmRing" cx="100" cy="100" r="92" pathLength="1" />
+          </svg>
+          <img class="timer__img" id="tmImg" alt="" />
+          <p class="timer__clock" id="tmClock">0:00</p>
+        </div>
+        <div class="timer__txt">
+          <p class="mono" id="tmCount"></p>
+          <h2 class="timer__step" id="tmStep"></h2>
+          <p class="timer__how" id="tmHow"></p>
+          <div class="timer__ctrl">
+            <button class="btn" type="button" id="tmPlay"><span>pause</span><i>❙❙</i></button>
+            <button class="btn btn--white" type="button" id="tmNext"><span>next step</span><i>→</i></button>
+          </div>
+          <ol class="timer__dots" id="tmDots"></ol>
+        </div>
+      </div>
+      <div class="timer__done" id="tmDone" hidden>
+        <p class="big-word timer__doneword" id="tmDoneWord">done.</p>
+        <p class="timer__donetxt">Your hair says thank you. So do we.</p>
+        <div class="timer__ctrl">
+          <button class="btn" type="button" id="tmBuy"><span>add this ritual to bag</span><i>+</i></button>
+          <button class="btn btn--white" type="button" id="tmBack"><span>back to the rituals</span><i>↺</i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="ft" id="ft">
+      <div class="ft__top">
+        <div>
+          <p class="mono k">the fringe club</p>
+          <p class="ft__lead">first access to every drop, a free trim on your birthday.</p>
+          <form class="ft__form" id="ftForm" novalidate autocomplete="off">
+            <input type="email" id="ftMail" placeholder="your email" aria-label="your email" />
+            <button class="btn" type="submit"><span>join</span><i>✶</i></button>
+          </form>
+        </div>
+        <div><p class="mono k">shop</p><p class="ft__links"><a href="shop.html">boutique</a><a href="quiz.html">hair quiz</a><a href="rituals.html">rituals</a></p></div>
+        <div><p class="mono k">salon</p><p class="ft__links"><a href="salon.html">via delle frange 7</a><span>milano · walk-ins welcome</span><span>milano now — <b data-clock>00:00</b></span></p></div>
+      </div>
+      <div class="ft__logo" id="ftLogo" data-cursor="come closer">
+        <p class="big-word" id="ftWord" aria-label="FRINGE">FRINGE</p>
+      </div>
+      <div class="ft__bottom">
+        <span>© 2026 FRINGE — a concept. no fringes were harmed.</span>
+        <a href="#top" data-jump>back to the top ↑</a>
+        <span class="ft-sign">concept, design &amp; code by <span class="script">ghostly.grl</span> ♥</span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/data.js?v=20261023-13"></script>
+  <script src="js/main.js?v=20261023-13"></script>
+  <script src="js/rituals.js?v=20261023-13"></script>
+</body>
+  <!--
+   *    /\_/\      +
+       ( o.o )   <3  ghostly.grl
+   +    > ^ <          *
+-->
+</html>

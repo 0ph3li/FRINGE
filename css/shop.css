@@ -1,0 +1,98 @@
+/* =========================================================
+   FRINGE — shop.css (the boutique)
+   concept, design & code by ghostly.grl ♥
+   ========================================================= */
+
+.loader--quick .ld-word { font-size: 12vw; }
+.nav a.is-here::after { transform: scaleX(1); }
+
+/* ================= 1 · THE WORD ================= */
+.bq-hero { padding: calc(var(--hdr) + 40px) var(--gut) 30px; }
+.bq-hero__k { display: flex; justify-content: space-between; margin: 0; border-bottom: 1px solid var(--ink); padding-bottom: 8px; }
+.bq-hero__word { padding: 4vh 0 2vh; overflow: hidden; }
+.bq-word { font-size: 14.5vw; font-weight: 150; }
+.bq-hero__row { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; }
+.bq-hero__lead { margin: 0; max-width: 42ch; font-size: 20px; line-height: 1.35; letter-spacing: -.01em; }
+.bq-hero__lead .script { font-size: 1.5em; color: var(--pink); line-height: 1; }
+.bq-hero__ship { margin: 0; color: var(--ink-2); text-align: right; }
+
+/* ================= 2 · FILTERS ================= */
+.filters {
+  position: sticky; top: 0; z-index: 30; margin-top: 30px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 12px 26px;
+  padding: 14px var(--gut); background: color-mix(in srgb, var(--white) 88%, transparent);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid rgba(11, 11, 13, .12); border-bottom: 1px solid rgba(11, 11, 13, .12);
+  transition: top .6s var(--ease);
+}
+.hdr:not(.is-hidden) ~ main .filters { top: var(--hdr); }
+.filters__group { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.filters__group--hair .mono { margin-right: 6px; color: var(--ink-2); }
+.pill {
+  position: relative; padding: 7px 14px; border-radius: 99px; border: 1px solid rgba(11, 11, 13, .25);
+  font-weight: 600; font-size: 13px; transition: border-color .3s, color .3s;
+  overflow: hidden; isolation: isolate;
+}
+.pill::before { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--ink); transform: scaleY(0); transform-origin: 50% 100%; transition: transform .45s var(--ease); }
+.pill:hover { border-color: var(--ink); }
+.pill.is-on { color: #fff; border-color: var(--ink); }
+.pill.is-on::before { transform: none; }
+.pill sup { font-family: var(--mono); font-weight: 400; font-size: 9px; margin-left: 3px; opacity: .6; }
+.filters__group--hair .pill.is-on { color: #fff; border-color: var(--pink); }
+.filters__group--hair .pill::before { background: var(--pink); }
+.filters__sort { margin-left: auto; display: flex; align-items: center; gap: 10px; color: var(--ink-2); }
+.filters__sort select { font-family: var(--sans); font-weight: 600; font-size: 13px; color: var(--ink); background: transparent; border: 0; border-bottom: 1px solid var(--ink); padding: 4px 18px 4px 0; border-radius: 0; cursor: pointer; }
+
+/* ================= 3 · THE SHELF ================= */
+.shelf { padding: 34px var(--gut) 120px; }
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 34px 18px; grid-auto-flow: dense; }
+.pc { position: relative; cursor: pointer; }
+.pc__stage {
+  position: relative; aspect-ratio: 4 / 5; overflow: hidden;
+  background: radial-gradient(110% 80% at 50% 30%, #ffffff, #eef1f4 60%, #e2e8ee);
+  transition: border-radius .7s var(--ease);
+}
+.pc:hover .pc__stage { border-radius: 46% 46% 4px 4px / 26% 26% 4px 4px; }
+.pc__img { position: absolute; inset: 12% 14%; width: 72%; height: 76%; object-fit: contain; object-position: 50% 100%; filter: drop-shadow(0 5px 6px rgba(20, 24, 32, .14)); transition: transform 1s var(--ease); will-change: transform; }
+.pc__stage::after { content: ''; position: absolute; left: 24%; right: 24%; bottom: 9%; height: 4%; background: radial-gradient(closest-side, rgba(20, 24, 32, .26), transparent); transition: transform 1s var(--ease), opacity 1s; }
+.pc:hover .pc__stage::after { transform: scaleX(.8); opacity: .6; }
+.pc:hover .pc__img { transform: translateY(-5%) rotate(-4deg) scale(1.05); }
+.pc__n { position: absolute; left: 12px; top: 10px; color: var(--ink-2); }
+.pc__badge { position: absolute; right: 10px; top: 10px; padding: 4px 9px; border-radius: 99px; background: var(--ink); color: #fff; font-weight: 600; font-size: 11px; }
+.pc__name { margin: 14px 0 0; font-weight: 600; font-size: 17px; letter-spacing: -.01em; }
+.pc__meta { margin: 2px 0 10px; color: var(--ink-2); }
+.pc__for { display: flex; flex-wrap: wrap; gap: 4px; margin: 0 0 10px; }
+.pc__for span { font-family: var(--mono); font-size: 10px; padding: 2px 7px; border-radius: 99px; background: #eef1f4; }
+.pc__view { width: 100%; margin-top: 10px; }
+.pc__view i { font-style: normal; }
+.pc__buy { margin: 0; display: flex; justify-content: space-between; align-items: center; font-weight: 600; border-top: 1px solid rgba(11, 11, 13, .15); padding-top: 10px; }
+
+.tile { position: relative; grid-column: span 2; margin: 0; overflow: hidden; align-self: start; }
+.tile .slot { transition: scale 1.4s var(--ease); }
+.tile:hover .slot { scale: 1.04; }
+.tile figcaption { position: absolute; left: 18px; bottom: 16px; right: 18px; display: flex; justify-content: space-between; align-items: baseline; color: #fff; text-shadow: 0 1px 10px rgba(0, 0, 0, .35); }
+.tile .script { font-size: 34px; }
+.tile.is-gone { display: none; }
+
+.shelf__none { display: none; margin: 40px 0 0; text-align: center; font-size: 20px; }
+.shelf__none button { font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+.shelf.is-empty .shelf__none { display: block; }
+
+/* ================= 4 · CAN'T DECIDE ================= */
+.decide { display: grid; grid-template-columns: minmax(0, 420px) 1fr; gap: 6vw; align-items: center; padding: 40px var(--gut) 140px; }
+.decide__txt p:not(.k) { font-size: 18px; max-width: 34ch; margin: 22px 0 26px; }
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1100px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 960px) {
+  .decide { grid-template-columns: 1fr; }
+  .filters__sort { margin-left: 0; }
+}
+@media (max-width: 700px) {
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 26px 12px; }
+  .bq-hero__row { flex-direction: column; align-items: flex-start; }
+  .bq-hero__ship { text-align: left; }
+  .filters { gap: 10px; overflow-x: auto; flex-wrap: nowrap; }
+  .filters__group { flex-wrap: nowrap; }
+  .tile .script { font-size: 24px; }
+}

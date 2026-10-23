@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><!-- FRINGE · ghostly.grl ♥ -->
+  <rect width="64" height="64" rx="12" fill="#f3efe8"/>
+  <text x="32" y="50" text-anchor="middle" font-family="Gloock, Georgia, serif" font-size="50" fill="#141210">F</text>
+  <g stroke-linecap="round" stroke-width="2.2"><path d="M10 0 V24" stroke="#e7d6ad"/><path d="M17 0 V27" stroke="#4b2b1d"/><path d="M24 0 V23" stroke="#e7d6ad"/><path d="M31 0 V28" stroke="#4b2b1d"/><path d="M38 0 V24" stroke="#e7d6ad"/><path d="M45 0 V27" stroke="#4b2b1d"/><path d="M52 0 V23" stroke="#e7d6ad"/></g>
+  <circle cx="53" cy="49" r="3.4" fill="#ff4fa3"/>
+</svg>

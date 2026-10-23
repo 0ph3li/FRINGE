@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" translate="no" class="notranslate">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="google" content="notranslate" />
+  <title>Product — FRINGE</title>
+  <meta name="description" content="A FRINGE product, poster-size: what it does, what's in it, how to use it, what it goes with." />
+  <meta name="theme-color" content="#f7f8fa" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <!-- concept, design & code by ghostly.grl ♥ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=DM+Mono:wght@400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=20261023-13" />
+  <link rel="stylesheet" href="css/home.css?v=20261023-13" />
+  <link rel="stylesheet" href="css/product.css?v=20261023-13" />
+</head>
+<body class="is-loading" data-page="product">
+
+  <!-- ================= LOADER ================= -->
+  <div class="loader loader--quick" id="loader" aria-hidden="true">
+    <p class="ld-top caps">FRINGE — boutique</p>
+    <p class="ld-word" id="ldWord" aria-hidden="true">FRINGE</p>
+    <p class="ld-bot mono"><span id="ldMsg">washing</span></p>
+    <p class="ld-num" id="ldNum">00</p>
+  </div>
+
+  <!-- global fx -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><i class="cursor__dot"></i><span class="cursor__label" id="cursorLabel"></span></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="progress" aria-hidden="true"><i id="progress"></i></div>
+
+  <!-- ================= HEADER ================= -->
+  <header class="hdr" id="hdr">
+    <nav class="nav" aria-label="Main">
+      <a href="shop.html" class="is-here">boutique</a>
+      <a href="quiz.html">hair quiz</a>
+      <a href="rituals.html">rituals</a>
+      <a href="salon.html">salon</a>
+    </nav>
+    <a href="index.html" class="logo" aria-label="FRINGE home">FRINGE<small>HAIR CARE</small></a>
+    <div class="hdr__r">
+      <a href="salon.html#book">book a chair</a>
+      <button class="bag" id="bag" type="button" data-cursor="your bag">bag · <b id="bagN">0</b></button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ========== 1 · THE POSTER ========== -->
+    <section class="pd" id="pd">
+      <div class="pd__stage" id="stage" data-cursor="look closer">
+        <p class="pd__big" id="pdBig" aria-hidden="true"></p>
+        <div class="pd__obj" id="pdObj"><img class="pd__img" id="pdImg" alt="" draggable="false" /></div>
+        <span class="pd__lens" id="lens" aria-hidden="true"></span>
+        <p class="pd__n mono" id="pdN"></p>
+        <p class="pd__hint mono">hover to look closer</p>
+      </div>
+
+      <div class="pd__info">
+        <p class="pd__crumbs mono"><a href="shop.html">boutique</a> / <a id="pdCat" href="shop.html"></a></p>
+        <h1 class="pd__name" id="pdName"></h1>
+        <p class="pd__kind mono" id="pdKind"></p>
+        <p class="pd__desc" id="pdDesc"></p>
+        <p class="pd__for" id="pdFor"></p>
+
+        <div class="pd__buy" id="buy">
+          <p class="pd__vol" id="pdVol"></p>
+          <p class="pd__price" id="pdPrice"></p>
+          <span class="pd__qty"><button type="button" id="minus" aria-label="one less">−</button><b id="qty">1</b><button type="button" id="plus" aria-label="one more">+</button></span>
+          <button class="btn pd__add" type="button" id="add" data-magnet><span>add to bag</span><i>+</i></button>
+        </div>
+        <p class="pd__ship mono" id="pdShip"></p>
+      </div>
+    </section>
+
+    <!-- ========== 2 · WHAT'S IN IT ========== -->
+    <section class="inside" id="inside">
+      <p class="mono k">what's in it</p>
+      <ul class="inside__tags" id="tags"></ul>
+      <p class="inside__note">No silicones you can't wash out, no sulphates that strip, no fragrance louder than you.</p>
+    </section>
+
+    <!-- ========== 3 · HOW ========== -->
+    <section class="how" id="how">
+      <p class="mono k">how</p>
+      <p class="how__q" id="howQ"></p>
+      <a class="how__link mono" href="rituals.html">it's part of a ritual → see all four</a>
+    </section>
+
+    <!-- ========== 4 · GOES WITH ========== -->
+    <section class="pairs" id="pairs">
+      <header class="pairs__head">
+        <p class="mono k">goes with</p>
+        <h2 class="t-big" data-split>the rest of the <em class="script">routine</em></h2>
+      </header>
+      <div class="pairs__row" id="pairRow"></div>
+    </section>
+
+    <!-- ========== 5 · NEXT ========== -->
+    <nav class="nextp" id="nextp" aria-label="other products">
+      <a class="nextp__a nextp__a--prev" id="prev" data-cursor="previous"></a>
+      <a class="nextp__a nextp__a--next" id="next" data-cursor="next"></a>
+    </nav>
+
+    <!-- sticky bar: shows up when the add button scrolls away -->
+    <div class="sbar" id="sbar" aria-hidden="true">
+      <img id="sbImg" alt="" /><p><b id="sbName"></b><span class="mono" id="sbMeta"></span></p>
+      <button class="btn" type="button" id="sbAdd"><span>add to bag</span><i>+</i></button>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="ft" id="ft">
+      <div class="ft__top">
+        <div>
+          <p class="mono k">the fringe club</p>
+          <p class="ft__lead">first access to every drop, a free trim on your birthday.</p>
+          <form class="ft__form" id="ftForm" novalidate autocomplete="off">
+            <input type="email" id="ftMail" placeholder="your email" aria-label="your email" />
+            <button class="btn" type="submit"><span>join</span><i>✶</i></button>
+          </form>
+        </div>
+        <div><p class="mono k">shop</p><p class="ft__links"><a href="shop.html">boutique</a><a href="quiz.html">hair quiz</a><a href="rituals.html">rituals</a></p></div>
+        <div><p class="mono k">salon</p><p class="ft__links"><a href="salon.html">via delle frange 7</a><span>milano · walk-ins welcome</span><span>milano now — <b data-clock>00:00</b></span></p></div>
+      </div>
+      <div class="ft__logo" id="ftLogo" data-cursor="come closer">
+        <p class="big-word" id="ftWord" aria-label="FRINGE">FRINGE</p>
+      </div>
+      <div class="ft__bottom">
+        <span>© 2026 FRINGE — a concept. no fringes were harmed.</span>
+        <a href="#top" data-jump>back to the top ↑</a>
+        <span class="ft-sign">concept, design &amp; code by <span class="script">ghostly.grl</span> ♥</span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/data.js?v=20261023-13"></script>
+  <script src="js/main.js?v=20261023-13"></script>
+  <script src="js/product.js?v=20261023-13"></script>
+</body>
+  <!--
+   *    /\_/\      +
+       ( o.o )   <3  ghostly.grl
+   +    > ^ <          *
+-->
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" translate="no" class="notranslate">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="google" content="notranslate" />
+  <title>Boutique — FRINGE</title>
+  <meta name="description" content="The FRINGE boutique: shampoo, masks, serums, oils, sprays, a travel set for straight hair and the tools. Filter by what your hair has been through." />
+  <meta name="theme-color" content="#f7f8fa" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <!-- concept, design & code by ghostly.grl ♥ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=DM+Mono:wght@400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=20261023-15" />
+  <link rel="stylesheet" href="css/home.css?v=20261023-15" />
+  <link rel="stylesheet" href="css/shop.css?v=20261023-15" />
+</head>
+<body class="is-loading" data-page="shop">
+
+  <!-- ================= LOADER: the word breathes from thin to bold ================= -->
+  <div class="loader loader--quick" id="loader" aria-hidden="true">
+    <p class="ld-top caps">FRINGE — boutique</p>
+    <p class="ld-word" id="ldWord" aria-hidden="true">BOUTIQUE</p>
+    <p class="ld-bot mono"><span id="ldMsg">washing</span></p>
+    <p class="ld-num" id="ldNum">00</p>
+  </div>
+
+  <!-- global fx -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><i class="cursor__dot"></i><span class="cursor__label" id="cursorLabel"></span></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="progress" aria-hidden="true"><i id="progress"></i></div>
+
+  <!-- ================= HEADER ================= -->
+  <header class="hdr" id="hdr">
+    <nav class="nav" aria-label="Main">
+      <a href="shop.html" class="is-here" aria-current="page">boutique</a>
+      <a href="quiz.html">hair quiz</a>
+      <a href="rituals.html">rituals</a>
+      <a href="salon.html">salon</a>
+    </nav>
+    <a href="index.html" class="logo" aria-label="FRINGE home">FRINGE<small>HAIR CARE</small></a>
+    <div class="hdr__r">
+      <a href="index.html#method">the method</a>
+      <button class="bag" id="bag" type="button" data-cursor="your bag">bag · <b id="bagN">0</b></button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ========== 1 · THE WORD ========== -->
+    <section class="bq-hero" id="bqHero">
+      <p class="bq-hero__k mono"><span>02 — the boutique</span><span><b id="bqCount">18</b> things for your hair</span></p>
+      <div class="bq-hero__word" data-cursor="come closer">
+        <h1 class="big-word bq-word" id="bqWord" aria-label="boutique">boutique</h1>
+      </div>
+      <div class="bq-hero__row">
+        <p class="bq-hero__lead">Everything we make, on one shelf. Tell us what your hair has been through and the shelf <em class="script">rearranges itself</em>.</p>
+        <p class="bq-hero__ship caps">free shipping from €60 · milano → everywhere</p>
+      </div>
+    </section>
+
+    <!-- ========== 2 · FILTERS (sticky) ========== -->
+    <div class="filters" id="filters">
+      <div class="filters__group" role="group" aria-label="category" id="fCat"></div>
+      <div class="filters__group filters__group--hair" role="group" aria-label="made for" id="fHair"><span class="mono">made for</span></div>
+      <label class="filters__sort mono">sort
+        <select id="fSort">
+          <option value="featured">featured</option>
+          <option value="low">price, low → high</option>
+          <option value="high">price, high → low</option>
+          <option value="az">a → z</option>
+        </select>
+      </label>
+    </div>
+
+    <!-- ========== 3 · THE SHELF ========== -->
+    <section class="shelf" id="shelf" aria-live="polite">
+      <div class="grid" id="grid">
+        <!-- editorial tiles: only on "everything" -->
+        <figure class="tile" data-tile="2" data-cursor="for the hair">
+          <div class="slot" data-img="img/HOME/band-hair.jpg" data-ratio="4/3" data-label="band-hair.jpg"></div>
+          <figcaption><span class="caps">for the hair</span><span class="script">wash, then trust it</span></figcaption>
+        </figure>
+        <figure class="tile tile--r" data-tile="5" data-cursor="for the ends">
+          <div class="slot" data-img="img/HOME/band-end.jpg" data-ratio="4/3" data-label="band-end.jpg"></div>
+          <figcaption><span class="caps">for the ends</span><span class="script">two drops, no more</span></figcaption>
+        </figure>
+      </div>
+      <p class="shelf__none" id="none">nothing on this shelf for that hair yet. <button type="button" id="reset">show everything</button></p>
+    </section>
+
+    <!-- ========== 4 · CAN'T DECIDE ========== -->
+    <section class="decide" id="decide">
+      <div class="decide__pic"><div class="slot" data-img="img/HOME/r-lengths.jpg" data-ratio="4/5" data-label="r-lengths.jpg"></div></div>
+      <div class="decide__txt">
+        <p class="mono k">can't decide?</p>
+        <h2 class="t-big" data-split>let your hair <em class="script">choose</em></h2>
+        <p>Six questions about what your hair did this week. One routine at the end, no judgement.</p>
+        <a href="quiz.html" class="btn" data-magnet><span>take the hair quiz</span><i>→</i></a>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="ft" id="ft">
+      <div class="ft__top">
+        <div>
+          <p class="mono k">the fringe club</p>
+          <p class="ft__lead">first access to every drop, a free trim on your birthday.</p>
+          <form class="ft__form" id="ftForm" novalidate autocomplete="off">
+            <input type="email" id="ftMail" placeholder="your email" aria-label="your email" />
+            <button class="btn" type="submit"><span>join</span><i>✶</i></button>
+          </form>
+        </div>
+        <div><p class="mono k">shop</p><p class="ft__links"><a href="shop.html">boutique</a><a href="quiz.html">hair quiz</a><a href="rituals.html">rituals</a></p></div>
+        <div><p class="mono k">salon</p><p class="ft__links"><a href="salon.html">via delle frange 7</a><span>milano · walk-ins welcome</span><span>milano now — <b data-clock>00:00</b></span></p></div>
+      </div>
+      <div class="ft__logo" id="ftLogo" data-cursor="come closer">
+        <p class="big-word" id="ftWord" aria-label="FRINGE">FRINGE</p>
+      </div>
+      <div class="ft__bottom">
+        <span>© 2026 FRINGE — a concept. no fringes were harmed.</span>
+        <a href="#top" data-jump>back to the top ↑</a>
+        <span class="ft-sign">concept, design &amp; code by <span class="script">ghostly.grl</span> ♥</span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/data.js?v=20261023-15"></script>
+  <script src="js/main.js?v=20261023-15"></script>
+  <script src="js/shop.js?v=20261023-15"></script>
+</body>
+  <!--
+   *    /\_/\      +
+       ( o.o )   <3  ghostly.grl
+   +    > ^ <          *
+-->
+</html>

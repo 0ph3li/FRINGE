@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" translate="no" class="notranslate">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="google" content="notranslate" />
+  <title>FRINGE — haircare for the ones on the fringe</title>
+  <meta name="description" content="FRINGE is haircare for hair with a reputation: shampoo, masks, oils and serums for bleached, backcombed, slept-on hair. Living my fringe life." />
+  <meta name="theme-color" content="#f7f8fa" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <!-- concept, design & code by ghostly.grl ♥ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=DM+Mono:wght@400;500&family=Pinyon+Script&family=UnifrakturMaguntia&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=20261023-14" />
+  <link rel="stylesheet" href="css/home.css?v=20261023-14" />
+</head>
+<body class="is-loading" data-page="home">
+
+  <!-- ================= LOADER: the word breathes from thin to bold ================= -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <p class="ld-top caps">FRINGE — hair care</p>
+    <p class="ld-word" id="ldWord" aria-hidden="true">FRINGE</p>
+    <p class="ld-bot mono"><span id="ldMsg">washing</span></p>
+    <p class="ld-num" id="ldNum">00</p>
+  </div>
+
+  <!-- global fx -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><i class="cursor__dot"></i><span class="cursor__label" id="cursorLabel"></span></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="progress" aria-hidden="true"><i id="progress"></i></div>
+
+  <!-- ================= HEADER ================= -->
+  <header class="hdr" id="hdr">
+    <nav class="nav" aria-label="Main">
+      <a href="shop.html">boutique</a>
+      <a href="quiz.html">hair quiz</a>
+      <a href="rituals.html">rituals</a>
+      <a href="salon.html">salon</a>
+    </nav>
+    <a href="index.html" class="logo" aria-label="FRINGE home">FRINGE<small>HAIR CARE</small></a>
+    <div class="hdr__r">
+      <a href="#method" data-jump>the method</a>
+      <button class="bag" id="bag" type="button" data-cursor="your bag">bag · <b id="bagN">0</b></button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ========== 1 · HERO: a studio photo, a logo that thickens near you ========== -->
+    <section class="hero" id="hero">
+      <div class="hero__photo">
+        <div class="slot" id="heroSlot" data-img="img/HOME/hero.jpg" data-ratio="736/562" data-label="hero.jpg · model on a white floor, long black hair, pure white background (it melts into the page) · 4:3"></div>
+      </div>
+
+      <p class="hero__tag">living my <em class="script">fringe</em> life</p>
+
+      <div class="hero__logo" id="heroLogo" data-cursor="come closer">
+        <h1 class="big-word" id="heroWord" aria-label="FRINGE">FRINGE</h1>
+      </div>
+
+      <div class="hero__foot">
+        <p class="caps">filmed for your mirror</p>
+        <a href="#poster" class="btn" data-jump data-magnet><span>shop the drop</span><i>→</i></a>
+        <p class="caps">N°01 — out now</p>
+      </div>
+    </section>
+
+    <!-- strip -->
+    <div class="strip" aria-hidden="true">
+      <div class="strip__track" data-marquee="1">
+        <span>living my fringe life</span><i>✶</i><span class="script">bleach-safe</span><i>✶</i><span>backcomb-proof</span><i>✶</i><span class="script">slept-on approved</span><i>✶</i>
+        <span>living my fringe life</span><i>✶</i><span class="script">bleach-safe</span><i>✶</i><span>backcomb-proof</span><i>✶</i><span class="script">slept-on approved</span><i>✶</i>
+      </div>
+    </div>
+
+    <!-- ========== 2 · RITUALS: four acts, four tall photos ========== -->
+    <section class="rituals" id="rituals">
+      <header class="rituals__head">
+        <p class="mono k">01 — the rituals</p>
+        <h2 class="t-big" data-split>care, in four <em class="script">acts</em></h2>
+        <p class="rituals__sub">Every head of hair goes through the same four scenes. We wrote a product for each one. Hover to open.</p>
+      </header>
+      <div class="acts" id="acts">
+        <a class="act" href="rituals.html" data-cursor="open">
+          <div class="slot" data-img="img/HOME/r-scalp.jpg" data-label="r-scalp.jpg · profile, eyes closed, white mask combed into wet hair at the roots · 2:3"></div>
+          <span class="act__n mono">i.</span>
+          <div class="act__txt"><p class="caps">scalp</p><p class="act__more">Clean Slate · a low-foam wash that forgets last night.</p></div>
+        </a>
+        <a class="act" href="rituals.html" data-cursor="open">
+          <div class="slot" data-img="img/HOME/r-treatment.jpg" data-label="r-treatment.jpg · back of a head, long glossy wet hair, bare shoulders · 2:3"></div>
+          <span class="act__n mono">ii.</span>
+          <div class="act__txt"><p class="caps">deep treatment</p><p class="act__more">Bad Hair Day · ten minutes, a towel, no more frizz.</p></div>
+        </a>
+        <a class="act" href="rituals.html" data-cursor="open">
+          <div class="slot" data-img="img/HOME/r-lengths.jpg" data-label="r-lengths.jpg · long brown lengths, a wooden paddle brush resting in the hair · 2:3"></div>
+          <span class="act__n mono">iii.</span>
+          <div class="act__txt"><p class="caps">lengths</p><p class="act__more">Gloss Bomb · two drops of 2003 lip gloss, for your ends.</p></div>
+        </a>
+        <a class="act" href="rituals.html" data-cursor="open">
+          <div class="slot slot--cut act__cut" data-img="img/HOME/s-comb.webp" data-label="s-comb.webp · the comb, cut out"></div>
+          <span class="act__n mono">iv.</span>
+          <div class="act__txt"><p class="caps">brushing</p><p class="act__more">The Comb · wide teeth, survives a mosh.</p></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========== 3 · THE POSTER: one product in front of its own name ========== -->
+    <section class="poster" id="poster">
+      <div class="poster__pin" id="posterPin">
+        <h2 class="poster__name" id="posterName" aria-live="polite">Clean Slate</h2>
+        <p class="poster__quote mono">if the road is beautiful,<br />don't ask where it goes</p>
+
+        <div class="poster__product" id="posterProduct">
+          <div class="slot slot--cut" data-img="img/HOME/p-shampoo.webp" data-ratio="2/3" data-label="p-shampoo.webp · the shampoo, cut out"></div>
+          <div class="slot slot--cut" data-img="img/HOME/p-mask.webp" data-ratio="2/3" data-label="p-mask.webp · the mask, cut out"></div>
+          <div class="slot slot--cut" data-img="img/HOME/p-oil.webp" data-ratio="2/3" data-label="p-oil.webp · the oil, cut out"></div>
+        </div>
+
+        <aside class="poster__l">
+          <p class="poster__copy" id="posterCopy">Hair changes every day. It reacts to the weather, the party, the pillow and the bleach.</p>
+          <div class="slot" id="posterFace" data-img="img/HOME/face.jpg" data-ratio="4/5" data-label="face.jpg · close-up, hands on the face, eyes closed, soft light · 4:5"></div>
+          <p class="poster__copy small">Our range is built around that, whatever your hair did last night.</p>
+          <p class="poster__vol"><b id="posterVol">300</b><span>ml</span><i>volume</i></p>
+        </aside>
+
+        <aside class="poster__r">
+          <button class="poster__next" id="posterNext" type="button" data-cursor="next"><i>→</i><span id="posterFor">for every hair that's been through it</span></button>
+          <div class="slot" id="posterSwatch" data-img="img/HOME/swatch.jpg" data-ratio="1/1" data-label="swatch.jpg · a swipe of white cream on pale grey paper · 1:1"></div>
+          <ul class="poster__tags" id="posterTags"><li>rice protein</li><li>lactic acid</li><li>rosemary leaf</li></ul>
+        </aside>
+
+        <p class="poster__foot caps"><span>made in milano</span><span class="poster__dots" id="posterDots"><i class="is-on"></i><i></i><i></i></span><span>since 2026</span></p>
+      </div>
+    </section>
+
+    <!-- ========== 4 · THE METHOD: a magazine spread ========== -->
+    <section class="method" id="method">
+      <div class="method__pic">
+        <div class="halftone-in slot" id="methodPic" data-img="img/HOME/method.jpg" data-ratio="3/4" data-label="method.jpg · pink hair, blunt fringe, crystal lashes, pink backdrop · 3:4"></div>
+      </div>
+      <div class="method__txt">
+        <p class="method__top"><span class="script">Culture</span><span class="mono">by the editors · photographed in milano</span></p>
+        <h2 class="method__title" id="methodTitle">The Fringe<br />Method</h2>
+        <p class="method__deck">a lesson on getting the hair you want, how you want it.</p>
+        <svg class="rhine" id="rhine" viewBox="0 0 860 160" aria-hidden="true">
+          <text x="10" y="112">time for a fringe</text>
+        </svg>
+        <div class="method__cols">
+          <p><b>FRINGE: When did you first cut your own?</b><br />At fifteen, at two in the morning, with kitchen scissors. Everyone has that night. We just made sure the morning after is better.</p>
+          <p><b>FRINGE: What does bleach really do?</b><br />It opens the hair and takes the colour out. Then it leaves. Bleach Recovery goes in after and closes the door behind it.</p>
+          <p><b>FRINGE: One rule?</b><br />Wash less, condition more, and never trust a straightener at 230°. Your fringe will tell you everything else.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 5 · THE STOREFRONT: photo bands, then the products ========== -->
+    <section class="store" id="store">
+      <article class="band">
+        <div class="band__photo">
+          <div class="slot" data-img="img/HOME/band-hair.jpg" data-ratio="4/3" data-label="band-hair.jpg · glasses, long black hair, ice-blue studio · 4:3"></div>
+          <p class="band__k caps">for the hair</p>
+          <a href="shop.html" class="btn band__btn" data-magnet><span>shop now</span><i>→</i></a>
+        </div>
+        <div class="row">
+          <div class="item" data-id="curl-theory" data-name="Curl Theory" data-price="26"><div class="slot slot--cut" data-img="img/BOUTIQUE/curl-theory.webp" data-ratio="1/1" data-label="curl-theory.webp"></div><p class="item__name"><a href="product.html?id=curl-theory">Curl Theory</a></p><p class="item__meta mono">curl defining shampoo · 300 ml</p><p class="item__buy"><span>€26</span><span class="item__btns"><a class="btn-view" href="product.html?id=curl-theory">view <i>→</i></a><button class="add" type="button">add +</button></span></p></div>
+          <div class="item" data-id="curl-harmony" data-name="Curl Harmony" data-price="26"><div class="slot slot--cut" data-img="img/BOUTIQUE/curl-harmony.webp" data-ratio="1/1" data-label="curl-harmony.webp"></div><p class="item__name"><a href="product.html?id=curl-harmony">Curl Harmony</a></p><p class="item__meta mono">curl conditioner · 300 ml</p><p class="item__buy"><span>€26</span><span class="item__btns"><a class="btn-view" href="product.html?id=curl-harmony">view <i>→</i></a><button class="add" type="button">add +</button></span></p></div>
+          <div class="item" data-id="blonde-duo" data-name="Blonde Duo" data-price="58"><div class="slot slot--cut" data-img="img/BOUTIQUE/blonde-duo.webp" data-ratio="1/1" data-label="blonde-duo.webp"></div><p class="item__name"><a href="product.html?id=blonde-duo">Blonde Duo</a></p><p class="item__meta mono">purple shampoo + conditioner · 2 × 500 ml</p><p class="item__buy"><span>€58</span><span class="item__btns"><a class="btn-view" href="product.html?id=blonde-duo">view <i>→</i></a><button class="add" type="button">add +</button></span></p></div>
+          <div class="item" data-id="strength-repair" data-name="Strength Repair" data-price="34"><div class="slot slot--cut" data-img="img/BOUTIQUE/strength-repair.webp" data-ratio="1/1" data-label="strength-repair.webp"></div><p class="item__name"><a href="product.html?id=strength-repair">Strength Repair</a></p><p class="item__meta mono">mask for fine &amp; brittle hair · 250 ml</p><p class="item__buy"><span>€34</span><span class="item__btns"><a class="btn-view" href="product.html?id=strength-repair">view <i>→</i></a><button class="add" type="button">add +</button></span></p></div>
+        </div>
+      </article>
+      <article class="band band--flip">
+        <div class="band__photo">
+          <div class="slot" data-img="img/HOME/band-end.jpg" data-ratio="4/3" data-label="band-end.jpg · silver hair, sequin top, cold blue light · 4:3"></div>
+          <p class="band__k caps">for the night &amp; the details</p>
+          <a href="shop.html?cat=tools" class="btn band__btn" data-magnet><span>shop now</span><i>→</i></a>
+        </div>
+        <div class="row">
+          <div class="item" data-id="glass-veil" data-name="Glass Veil" data-price="27"><div class="slot slot--cut" data-img="img/BOUTIQUE/glass-veil.webp" data-ratio="1/1" data-label="glass-veil.webp"></div><p class="item__name"><a href="product.html?id=glass-veil">Glass Veil</a></p><p class="item__meta mono">anti-frizz smoothing spray · 200 ml</p><p class="item__buy"><span>€27</span><span class="item__btns"><a class="btn-view" href="product.html?id=glass-veil">view <i>→</i></a><button class="add" type="button">add +</button></span></p></div>
+          <div class="item" data-id="beauty-sleep" data-name="Beauty Sleep" data-price="22"><div class="slot slot--cut" data-img="img/BOUTIQUE/beauty-sleep.webp" data-ratio="1/1" data-label="beauty-sleep.webp"></div><p class="item__name"><a href="product.html?id=beauty-sleep">Beauty Sleep</a></p><p class="item__meta mono">satin bonnet · one size</p><p class="item__buy"><span>€22</span><span class="item__btns"><a class="btn-view" href="product.html?id=beauty-sleep">view <i>→</i></a><button class="add" type="button">add +</button></span></p></div>
+          <div class="item" data-id="angel-clips" data-name="Angel Clips" data-price="14"><div class="slot slot--cut" data-img="img/BOUTIQUE/angel-clips.webp" data-ratio="1/1" data-label="angel-clips.webp"></div><p class="item__name"><a href="product.html?id=angel-clips">Angel Clips</a></p><p class="item__meta mono">wing snap clips · set of 2</p><p class="item__buy"><span>€14</span><span class="item__btns"><a class="btn-view" href="product.html?id=angel-clips">view <i>→</i></a><button class="add" type="button">add +</button></span></p></div>
+          <div class="item" data-id="sweetheart-comb" data-name="Sweetheart Comb" data-price="24"><div class="slot slot--cut" data-img="img/BOUTIQUE/sweetheart-comb.webp" data-ratio="1/1" data-label="sweetheart-comb.webp"></div><p class="item__name"><a href="product.html?id=sweetheart-comb">Sweetheart Comb</a></p><p class="item__meta mono">silver pocket comb</p><p class="item__buy"><span>€24</span><span class="item__btns"><a class="btn-view" href="product.html?id=sweetheart-comb">view <i>→</i></a><button class="add" type="button">add +</button></span></p></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ========== FOOTER: the word again, bigger ========== -->
+    <footer class="ft" id="ft">
+      <div class="ft__top">
+        <div>
+          <p class="mono k">the fringe club</p>
+          <p class="ft__lead">first access to every drop, a free trim on your birthday.</p>
+          <form class="ft__form" id="ftForm" novalidate autocomplete="off">
+            <input type="email" id="ftMail" placeholder="your email" aria-label="your email" />
+            <button class="btn" type="submit"><span>join</span><i>✶</i></button>
+          </form>
+        </div>
+        <div><p class="mono k">shop</p><p class="ft__links"><a href="shop.html">boutique</a><a href="quiz.html">hair quiz</a><a href="rituals.html">rituals</a></p></div>
+        <div><p class="mono k">salon</p><p class="ft__links"><a href="salon.html">via delle frange 7</a><span>milano · walk-ins welcome</span><span>milano now — <b data-clock>00:00</b></span></p></div>
+      </div>
+      <div class="ft__logo" id="ftLogo" data-cursor="come closer">
+        <p class="big-word" id="ftWord" aria-label="FRINGE">FRINGE</p>
+      </div>
+      <div class="ft__bottom">
+        <span>© 2026 FRINGE — a concept. no fringes were harmed.</span>
+        <a href="#top" data-jump>back to the top ↑</a>
+        <span class="ft-sign">concept, design &amp; code by <span class="script">ghostly.grl</span> ♥</span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/main.js?v=20261023-14"></script>
+  <script src="js/home.js?v=20261023-14"></script>
+</body>
+  <!--
+   *    /\_/\      +
+       ( o.o )   <3  ghostly.grl
+   +    > ^ <          *
+-->
+</html>

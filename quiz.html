@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" translate="no" class="notranslate">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="google" content="notranslate" />
+  <title>Hair quiz — FRINGE</title>
+  <meta name="description" content="Six questions about what your hair did this week. One FRINGE routine at the end, no judgement." />
+  <meta name="theme-color" content="#f7f8fa" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <!-- concept, design & code by ghostly.grl ♥ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=DM+Mono:wght@400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=20261023-13" />
+  <link rel="stylesheet" href="css/home.css?v=20261023-13" />
+  <link rel="stylesheet" href="css/quiz.css?v=20261023-13" />
+</head>
+<body class="is-loading" data-page="quiz">
+
+  <!-- ================= LOADER ================= -->
+  <div class="loader loader--quick" id="loader" aria-hidden="true">
+    <p class="ld-top caps">FRINGE — hair quiz</p>
+    <p class="ld-word" id="ldWord" aria-hidden="true">QUIZ</p>
+    <p class="ld-bot mono"><span id="ldMsg">washing</span></p>
+    <p class="ld-num" id="ldNum">00</p>
+  </div>
+
+  <!-- global fx -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><i class="cursor__dot"></i><span class="cursor__label" id="cursorLabel"></span></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="progress" aria-hidden="true"><i id="progress"></i></div>
+
+  <!-- ================= HEADER ================= -->
+  <header class="hdr" id="hdr">
+    <nav class="nav" aria-label="Main">
+      <a href="shop.html">boutique</a>
+      <a href="quiz.html" class="is-here" aria-current="page">hair quiz</a>
+      <a href="rituals.html">rituals</a>
+      <a href="salon.html">salon</a>
+    </nav>
+    <a href="index.html" class="logo" aria-label="FRINGE home">FRINGE<small>HAIR CARE</small></a>
+    <div class="hdr__r">
+      <a href="index.html#method">the method</a>
+      <button class="bag" id="bag" type="button" data-cursor="your bag">bag · <b id="bagN">0</b></button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ========== THE QUIZ: one question per screen ========== -->
+    <section class="qz" id="qz">
+      <!-- start -->
+      <div class="qz__start" id="qzStart">
+        <p class="mono qz__k"><span>03 — the hair quiz</span><span>6 questions · 1 minute</span></p>
+        <div class="qz__startword" data-cursor="come closer"><h1 class="big-word qz__word" id="qzWord" aria-label="what did your hair do">let your hair choose</h1></div>
+        <div class="qz__startrow">
+          <p class="qz__lead">Six questions about what your hair did this week. One routine at the end, made from our shelf. <em class="script">No judgement.</em></p>
+          <button class="btn qz__go" id="qzGo" type="button" data-magnet><span>start</span><i>→</i></button>
+        </div>
+      </div>
+
+      <!-- questions (built in js/quiz.js) -->
+      <div class="qz__q" id="qzQ" hidden>
+        <div class="qz__bar" id="qzBar" aria-hidden="true"></div>
+        <p class="qz__num mono"><b id="qzN">01</b> / 06</p>
+        <h2 class="qz__ask" id="qzAsk" aria-live="polite"></h2>
+        <p class="qz__hint mono" id="qzHint"></p>
+        <div class="qz__opts" id="qzOpts" role="group"></div>
+        <div class="qz__nav">
+          <button type="button" class="qz__back mono" id="qzBack">← back</button>
+          <p class="mono qz__keys">press 1 — 4, or click</p>
+        </div>
+      </div>
+
+      <!-- reading -->
+      <div class="qz__read" id="qzRead" hidden aria-hidden="true">
+        <p class="big-word qz__readword" id="qzReadWord">reading your hair</p>
+      </div>
+
+      <!-- the result -->
+      <div class="qz__res" id="qzRes" hidden>
+        <header class="res__head">
+          <p class="mono res__k"><span>your routine</span><span id="resDate"></span></p>
+          <h2 class="res__title"><span>your hair is</span> <em class="script" id="resWord">loud</em></h2>
+        </header>
+        <div class="res__grid">
+          <aside class="res__card" id="resCard">
+            <div class="res__cardtop"><span>FRINGE</span><span class="mono">hair profile</span></div>
+            <dl class="res__dl" id="resDl"></dl>
+            <p class="res__note" id="resNote"></p>
+            <p class="res__sign script">ghostly.grl</p>
+            <div class="res__strip" aria-hidden="true"></div>
+          </aside>
+          <ol class="res__steps" id="resSteps"></ol>
+        </div>
+        <div class="res__buy">
+          <p class="res__total"><span class="mono">the whole routine</span><b id="resTotal">€0</b></p>
+          <button class="btn" type="button" id="resAdd" data-magnet><span>add the routine to bag</span><i>+</i></button>
+          <button class="qz__back mono" type="button" id="resAgain">↺ take it again</button>
+          <a class="qz__back mono" href="shop.html">or browse the boutique →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="ft" id="ft">
+      <div class="ft__top">
+        <div>
+          <p class="mono k">the fringe club</p>
+          <p class="ft__lead">first access to every drop, a free trim on your birthday.</p>
+          <form class="ft__form" id="ftForm" novalidate autocomplete="off">
+            <input type="email" id="ftMail" placeholder="your email" aria-label="your email" />
+            <button class="btn" type="submit"><span>join</span><i>✶</i></button>
+          </form>
+        </div>
+        <div><p class="mono k">shop</p><p class="ft__links"><a href="shop.html">boutique</a><a href="quiz.html">hair quiz</a><a href="rituals.html">rituals</a></p></div>
+        <div><p class="mono k">salon</p><p class="ft__links"><a href="salon.html">via delle frange 7</a><span>milano · walk-ins welcome</span><span>milano now — <b data-clock>00:00</b></span></p></div>
+      </div>
+      <div class="ft__logo" id="ftLogo" data-cursor="come closer">
+        <p class="big-word" id="ftWord" aria-label="FRINGE">FRINGE</p>
+      </div>
+      <div class="ft__bottom">
+        <span>© 2026 FRINGE — a concept. no fringes were harmed.</span>
+        <a href="#top" data-jump>back to the top ↑</a>
+        <span class="ft-sign">concept, design &amp; code by <span class="script">ghostly.grl</span> ♥</span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/data.js?v=20261023-13"></script>
+  <script src="js/main.js?v=20261023-13"></script>
+  <script src="js/quiz.js?v=20261023-13"></script>
+</body>
+  <!--
+   *    /\_/\      +
+       ( o.o )   <3  ghostly.grl
+   +    > ^ <          *
+-->
+</html>

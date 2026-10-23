@@ -1,0 +1,151 @@
+/* =========================================================
+   FRINGE — data.js
+   the catalogue: one list, every page reads it
+   concept, design & code by ghostly.grl ♥
+   ========================================================= */
+window.FRINGE_DATA = {
+  cats: [
+    { id: 'all', label: 'everything' },
+    { id: 'wash', label: 'wash' },
+    { id: 'treat', label: 'treat' },
+    { id: 'finish', label: 'finish' },
+    { id: 'sets', label: 'sets' },
+    { id: 'tools', label: 'tools' },
+  ],
+  hair: [
+    { id: 'any', label: 'any hair' },
+    { id: 'straight', label: 'straight' },
+    { id: 'bleached', label: 'bleached' },
+    { id: 'curly', label: 'curly' },
+    { id: 'fine', label: 'fine' },
+  ],
+  // for: 'all' means it works on every kind of hair
+  products: [
+    {
+      id: 'clean-slate', name: 'Clean Slate', kind: 'shampoo', cat: 'wash', vol: '300 ml', price: 24, img: 'img/HOME/s-shampoo.webp',
+      for: ['all'], best: true,
+      desc: 'A low-foam wash that forgets last night without stripping it. Safe on bleach, gentle enough for every day.',
+      tags: ['rice protein', 'lactic acid', 'rosemary leaf'],
+      use: 'wet hair, massage into the roots, rinse. the lengths get what runs off.',
+    },
+    {
+      id: 'bad-hair-day', name: 'Bad Hair Day', kind: 'repair mask', cat: 'treat', vol: '200 ml', price: 32, img: 'img/HOME/s-mask.webp',
+      for: ['curly', 'bleached'], best: true,
+      desc: 'Ten minutes under a towel. The drama stays, the frizz leaves without saying goodbye.',
+      tags: ['shea butter', 'ceramides', 'pink clay'],
+      use: 'after shampoo, mid-lengths to ends, ten minutes, rinse cold.',
+    },
+    {
+      id: 'bleach-recovery', name: 'Bleach Recovery', kind: 'bond serum', cat: 'treat', vol: '50 ml', price: 38, img: 'img/HOME/s-serum.webp',
+      for: ['bleached'],
+      desc: 'For the week after platinum. Rebuilds the bonds the bleach broke and closes the door behind it.',
+      tags: ['maleic acid', 'keratin amino acids', 'panthenol'],
+      use: 'towel-dried hair, four drops, do not rinse.',
+    },
+    {
+      id: 'gloss-bomb', name: 'Gloss Bomb', kind: 'finishing oil', cat: 'finish', vol: '30 ml', price: 29, img: 'img/HOME/s-oil.webp',
+      for: ['straight', 'bleached'],
+      desc: 'Two drops on the ends and your hair reflects the room like a 2003 music video.',
+      tags: ['camellia oil', 'squalane', 'silk amino acids'],
+      use: 'two drops, warm them in your palms, ends only.',
+    },
+    {
+      id: 'backcomb', name: 'Backcomb', kind: 'texture spray', cat: 'finish', vol: '150 ml', price: 22, img: 'img/HOME/s-spray.webp',
+      for: ['fine', 'straight'],
+      desc: 'Volume like a Nokia ad. Holds through a night out, brushes out by morning.',
+      tags: ['rice starch', 'sea salt', 'vitamin e'],
+      use: 'shake, spray at the roots from 20 cm, backcomb, regret nothing.',
+    },
+    {
+      id: 'travel-set', name: 'Smooth & Shine Travel Set', kind: 'travel set · straight hair', cat: 'sets', vol: '3 × 50 ml', price: 39, img: 'img/HOME/s-three.webp',
+      for: ['straight'], best: true,
+      desc: 'Clean Slate shampoo, Soft Reset conditioner and Silk Veil smoothing oil, in carry-on sizes. Straight hair, straight to the gate.',
+      tags: ['clean slate shampoo', 'soft reset conditioner', 'silk veil oil'],
+      use: 'shampoo, conditioner, two drops of oil. repeat in another city.',
+    },
+    {
+      id: 'the-comb', name: 'The Comb', kind: 'tortoiseshell comb', cat: 'tools', vol: 'wide teeth · 17 cm', price: 18, img: 'img/HOME/s-comb.webp',
+      for: ['curly', 'all'],
+      desc: 'Wide teeth for wet hair and fringes. Fits in a back pocket, survives a mosh.',
+      tags: ['cellulose acetate', 'hand-polished', 'seamless teeth'],
+      use: 'wet hair, ends first, then work your way up.',
+    },
+    {
+      id: 'the-clips', name: 'The Clips', kind: 'star snap clips', cat: 'tools', vol: 'set of 3', price: 16, img: 'img/HOME/s-clips.webp',
+      for: ['all'],
+      desc: 'Silver star snap clips. For pinning back a fringe you are growing out, or for no reason at all.',
+      tags: ['silver-tone metal', 'nickel-free', '5 cm'],
+      use: 'snap. done.',
+    },
+    {
+      id: 'curl-theory', name: 'Curl Theory', kind: 'curl defining shampoo', cat: 'wash', vol: '300 ml', price: 26, img: 'img/BOUTIQUE/curl-theory.webp',
+      for: ['curly'],
+      desc: 'Cleans without undoing the curl. Your ringlets come out of the shower already knowing what to do.',
+      tags: ['flaxseed', 'aloe', 'glycerin'],
+      use: 'wet hair, scalp only, rinse with the head down.',
+    },
+    {
+      id: 'curl-harmony', name: 'Curl Harmony', kind: 'curl conditioner', cat: 'treat', vol: '300 ml', price: 26, img: 'img/BOUTIQUE/curl-harmony.webp',
+      for: ['curly'],
+      desc: 'Slip for the detangle, weight for the definition, nothing left behind but the curl.',
+      tags: ['shea butter', 'coconut milk', 'panthenol'],
+      use: 'after Curl Theory, comb through with your fingers, rinse half of it out.',
+    },
+    {
+      id: 'blonde-duo', name: 'Blonde Duo', kind: 'purple shampoo + conditioner', cat: 'sets', vol: '2 × 500 ml', price: 58, img: 'img/BOUTIQUE/blonde-duo.webp',
+      for: ['bleached'], best: true,
+      desc: 'Blonde Glow shampoo and Blonde Repair conditioner. Purple to take the brass out, keratin to put the strength back.',
+      tags: ['purple toning formula', 'keratin + amino acids', 'rice protein'],
+      use: 'once a week, 3 minutes on the lengths. longer = more silver.',
+    },
+    {
+      id: 'strength-repair', name: 'Strength Repair', kind: 'mask for fine & brittle hair', cat: 'treat', vol: '250 ml', price: 34, img: 'img/BOUTIQUE/strength-repair.webp',
+      for: ['fine', 'bleached'],
+      desc: 'For hair that snaps when you look at it. Rebuilds from the inside without weighing fine hair down.',
+      tags: ['keratin', 'rice protein', 'camellia oil'],
+      use: 'towel-dried hair, five minutes, rinse well.',
+    },
+    {
+      id: 'glass-veil', name: 'Glass Veil', kind: 'anti-frizz smoothing spray', cat: 'finish', vol: '200 ml', price: 27, img: 'img/BOUTIQUE/glass-veil.webp',
+      for: ['straight', 'curly'],
+      desc: 'A humidity shield you can\'t feel. Heat-activated, so the straightener finishes the job.',
+      tags: ['humidity shield', 'heat activated', 'high shine'],
+      use: 'damp hair, mist from 20 cm, blow-dry or straighten.',
+    },
+    {
+      id: 'green-room', name: 'The Green Room', kind: 'scalp ritual set', cat: 'sets', vol: '4 pieces', price: 64, img: 'img/BOUTIQUE/green-room.webp',
+      for: ['all'],
+      desc: 'Camellia scalp oil, rose water mist, matcha & ginseng cleanser and a camellia cream. A sunday for your scalp.',
+      tags: ['camellia oil', 'rose water', 'matcha & ginseng'],
+      use: 'oil the night before, cleanse in the morning, mist all week.',
+    },
+    {
+      id: 'sweetheart-comb', name: 'Sweetheart Comb', kind: 'silver pocket comb', cat: 'tools', vol: 'fine teeth · 15 cm', price: 24, img: 'img/BOUTIQUE/sweetheart-comb.webp',
+      for: ['straight', 'fine'],
+      desc: 'A silver comb with a heart for a handle. For the fringe, in the bathroom of a club, at 3am.',
+      tags: ['silver-plated', 'engraved', 'pouch included'],
+      use: 'dry hair, small sections, look in the mirror like you mean it.',
+    },
+    {
+      id: 'angel-clips', name: 'Angel Clips', kind: 'wing snap clips', cat: 'tools', vol: 'set of 2', price: 14, img: 'img/BOUTIQUE/angel-clips.webp',
+      for: ['all'],
+      desc: 'Pink acrylic wings with rhinestones on a gold snap. Holds a fringe back and a whole look together.',
+      tags: ['acrylic', 'rhinestones', 'gold-tone clip'],
+      use: 'snap above the ear. one each side, or both on one, we don\'t judge.',
+    },
+    {
+      id: 'head-rush', name: 'Head Rush', kind: 'scalp massager', cat: 'tools', vol: 'soft silicone', price: 15, img: 'img/BOUTIQUE/head-rush.webp',
+      for: ['all'],
+      desc: 'Soft silicone teeth that wake up the scalp and spread the shampoo where your fingers don\'t reach.',
+      tags: ['food-grade silicone', 'wheat straw handle', 'wet or dry'],
+      use: 'small circles, light pressure, two minutes. close your eyes.',
+    },
+    {
+      id: 'beauty-sleep', name: 'Beauty Sleep', kind: 'satin bonnet', cat: 'tools', vol: 'one size', price: 22, img: 'img/BOUTIQUE/beauty-sleep.webp',
+      for: ['curly', 'bleached'],
+      desc: 'Double-layer satin, a tie that stays on. Your hair wakes up the way you left it.',
+      tags: ['double satin', 'adjustable tie', 'machine wash cold'],
+      use: 'hair loose or in a pineapple, tie it, sleep.',
+    },
+  ],
+};

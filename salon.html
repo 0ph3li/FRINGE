@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" translate="no" class="notranslate">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="google" content="notranslate" />
+  <title>Salon — FRINGE</title>
+  <meta name="description" content="The FRINGE salon in Milano: cuts, fringes, colour, bleach and treatments. Via delle Frange 7, walk-ins welcome. Book a chair." />
+  <meta name="theme-color" content="#f7f8fa" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <!-- concept, design & code by ghostly.grl ♥ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=DM+Mono:wght@400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=20261023-16" />
+  <link rel="stylesheet" href="css/home.css?v=20261023-16" />
+  <link rel="stylesheet" href="css/salon.css?v=20261023-16" />
+</head>
+<body class="is-loading" data-page="salon">
+
+  <!-- ================= LOADER ================= -->
+  <div class="loader loader--quick" id="loader" aria-hidden="true">
+    <p class="ld-top caps">FRINGE — salon</p>
+    <p class="ld-word" id="ldWord" aria-hidden="true">SALON</p>
+    <p class="ld-bot mono"><span id="ldMsg">washing</span></p>
+    <p class="ld-num" id="ldNum">00</p>
+  </div>
+
+  <!-- global fx -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><i class="cursor__dot"></i><span class="cursor__label" id="cursorLabel"></span></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="progress" aria-hidden="true"><i id="progress"></i></div>
+  <div class="peek slot" id="peek" aria-hidden="true"></div>
+
+  <!-- ================= HEADER ================= -->
+  <header class="hdr" id="hdr">
+    <nav class="nav" aria-label="Main">
+      <a href="shop.html">boutique</a>
+      <a href="quiz.html">hair quiz</a>
+      <a href="rituals.html">rituals</a>
+      <a href="salon.html" class="is-here" aria-current="page">salon</a>
+    </nav>
+    <a href="index.html" class="logo" aria-label="FRINGE home">FRINGE<small>HAIR CARE</small></a>
+    <div class="hdr__r">
+      <a href="#book" data-jump>book a chair</a>
+      <button class="bag" id="bag" type="button" data-cursor="your bag">bag · <b id="bagN">0</b></button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ========== 1 · THE WORD + THE DOOR ========== -->
+    <section class="sl-hero" id="slHero">
+      <p class="sl-hero__k mono"><span>05 — the salon</span><span>via delle frange 7, milano</span><span class="sl-open" id="slOpen">—</span></p>
+      <div class="sl-hero__word" data-cursor="come closer"><h1 class="big-word sl-word" id="slWord" aria-label="salon">salon</h1></div>
+      <div class="sl-hero__row">
+        <div class="sl-hero__pic"><div class="slot" data-img="img/SALON/hero.jpg" data-ratio="4/5" data-label="hero.jpg · the salon"></div></div>
+        <div class="sl-hero__txt">
+          <p class="sl-hero__lead">Four chairs, one sink that faces the window, and a playlist nobody agrees on. We cut, we colour, we fix the fringe you cut at 2am. <em class="script">Walk-ins welcome.</em></p>
+          <a href="#book" class="btn" data-jump data-magnet><span>book a chair</span><i>→</i></a>
+        </div>
+        <div class="sl-hero__pic sl-hero__pic--sm"><div class="slot" data-img="img/SALON/hero-small.jpg" data-ratio="3/4" data-label="hero-small.jpg"></div></div>
+      </div>
+    </section>
+
+    <!-- ========== 2 · THE MENU ========== -->
+    <section class="menu" id="menu">
+      <header class="menu__head">
+        <p class="mono k">the menu</p>
+        <h2 class="t-big" data-split>cuts, colour &amp; <em class="script">repairs</em></h2>
+        <p class="menu__sub">Prices start here and end where your hair does. Every service comes with a wash and an honest opinion.</p>
+      </header>
+      <ol class="menu__list" id="menuList"></ol>
+    </section>
+
+    <!-- ========== 3 · BETWEEN APPOINTMENTS ========== -->
+    <section class="wait" id="wait">
+      <div class="wait__txt">
+        <p class="mono k">between appointments</p>
+        <h2 class="t-big" data-split>when can you <em class="script">colour</em> again?</h2>
+        <p class="wait__sub">Tell us when you last sat in the chair. We'll tell you when it's safe to come back.</p>
+        <label class="wait__date"><span class="mono">my last appointment</span><input type="date" id="waitDate" /></label>
+      </div>
+      <div class="wait__map" id="waitMap"></div>
+    </section>
+
+    <!-- ========== 4 · THE PEOPLE ========== -->
+    <section class="team" id="team">
+      <header class="team__head">
+        <p class="mono k">the chairs</p>
+        <h2 class="t-big" data-split>who's <em class="script">cutting</em></h2>
+      </header>
+      <div class="team__row" id="teamRow"></div>
+    </section>
+
+    <!-- ========== 5 · BOOK A CHAIR ========== -->
+    <section class="book" id="book">
+      <header class="book__head">
+        <p class="mono k">book a chair</p>
+        <h2 class="t-big" data-split>sit <em class="script">down</em></h2>
+      </header>
+      <div class="book__grid">
+        <form class="book__form" id="bookForm" novalidate autocomplete="off">
+          <fieldset><legend class="mono">01 · what</legend><div class="pills" id="bkService"></div></fieldset>
+          <fieldset><legend class="mono">02 · who</legend><div class="pills" id="bkWho"></div></fieldset>
+          <fieldset><legend class="mono">03 · when</legend><div class="days" id="bkDay"></div><div class="pills pills--times" id="bkTime"></div></fieldset>
+          <fieldset><legend class="mono">04 · you</legend>
+            <label class="field"><span class="mono">name</span><input type="text" id="bkName" maxlength="24" placeholder="your name" /></label>
+            <label class="field"><span class="mono">email</span><input type="email" id="bkMail" placeholder="you@somewhere.com" /></label>
+          </fieldset>
+          <button class="btn book__go" type="submit" data-magnet><span>book it</span><i>→</i></button>
+        </form>
+        <aside class="ticket-wrap">
+          <div class="ticket" id="ticket">
+            <div class="ticket__top"><span>FRINGE</span><span class="mono">appointment</span></div>
+            <dl class="ticket__dl">
+              <div><dt class="mono">service</dt><dd id="tkService">—</dd></div>
+              <div><dt class="mono">with</dt><dd id="tkWho">—</dd></div>
+              <div><dt class="mono">when</dt><dd id="tkWhen">—</dd></div>
+              <div><dt class="mono">for</dt><dd id="tkName">your name</dd></div>
+            </dl>
+            <p class="ticket__price"><span class="mono">from</span><b id="tkPrice">€0</b><span class="mono" id="tkTime"></span></p>
+            <p class="ticket__addr mono">via delle frange 7 · milano · come with dry hair, or don't</p>
+            <div class="ticket__stub"><span class="mono" id="tkNo">n° 0000</span><span class="ticket__bars" aria-hidden="true"></span></div>
+            <span class="ticket__stamp mono" id="tkStamp">booked ✶</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ========== 6 · VISIT ========== -->
+    <section class="visit" id="visit">
+      <div class="visit__card">
+        <p class="mono k">visit</p>
+        <p class="visit__addr">via delle frange 7<br />20121 milano</p>
+        <ul class="visit__hours" id="hours"></ul>
+      </div>
+      <div class="visit__pic"><div class="slot" data-img="img/SALON/end.jpg" data-ratio="3/2" data-label="end.jpg"></div></div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="ft" id="ft">
+      <div class="ft__top">
+        <div>
+          <p class="mono k">the fringe club</p>
+          <p class="ft__lead">first access to every drop, a free trim on your birthday.</p>
+          <form class="ft__form" id="ftForm" novalidate autocomplete="off">
+            <input type="email" id="ftMail" placeholder="your email" aria-label="your email" />
+            <button class="btn" type="submit"><span>join</span><i>✶</i></button>
+          </form>
+        </div>
+        <div><p class="mono k">shop</p><p class="ft__links"><a href="shop.html">boutique</a><a href="quiz.html">hair quiz</a><a href="rituals.html">rituals</a></p></div>
+        <div><p class="mono k">salon</p><p class="ft__links"><span>via delle frange 7</span><span>milano · walk-ins welcome</span><span>milano now — <b data-clock>00:00</b></span></p></div>
+      </div>
+      <div class="ft__logo" id="ftLogo" data-cursor="come closer">
+        <p class="big-word" id="ftWord" aria-label="FRINGE">FRINGE</p>
+      </div>
+      <div class="ft__bottom">
+        <span>© 2026 FRINGE — a concept. no fringes were harmed.</span>
+        <a href="#top" data-jump>back to the top ↑</a>
+        <span class="ft-sign">concept, design &amp; code by <span class="script">ghostly.grl</span> ♥</span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/data.js?v=20261023-16"></script>
+  <script src="js/main.js?v=20261023-16"></script>
+  <script src="js/salon.js?v=20261023-16"></script>
+</body>
+  <!--
+   *    /\_/\      +
+       ( o.o )   <3  ghostly.grl
+   +    > ^ <          *
+-->
+</html>
